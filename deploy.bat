@@ -1,4 +1,5 @@
 @echo off
+chcp 65001 >nul
 echo ========================================
 echo  GET Token Whitepaper - Deploy Script
 echo  GitHub: jaechulkim1973/get-whitepaper
@@ -8,35 +9,33 @@ echo.
 
 cd /d "%~dp0"
 
-echo [1/5] Initializing Git...
-git init
+echo [1/4] Initializing Git...
+if not exist ".git" (
+    git init
+    git remote add origin https://github.com/jaechulkim1973/get-whitepaper.git
+)
+
+echo.
+echo [2/4] Staging all files...
 git add -A
-git commit -m "GET Token Whitepaper v2.0 - Gold Ecosystem Token"
+git status
 
 echo.
-echo [2/5] Adding GitHub remote...
-git remote add origin https://github.com/jaechulkim1973/get-whitepaper.git 2>nul
+echo [3/4] Committing...
+git commit -m "GET Token Whitepaper v2.0 - Korea-HK Dual Hub Update"
+
+echo.
+echo [4/4] Pushing to GitHub...
 git branch -M main
-
-echo.
-echo [3/5] Pushing to GitHub...
-git push -u origin main
-
-echo.
-echo [4/5] Installing Vercel CLI...
-call npm i -g vercel
-
-echo.
-echo [5/5] Deploying to Vercel...
-call vercel --prod
+git push -u origin main --force
 
 echo.
 echo ========================================
-echo  DEPLOYMENT COMPLETE!
-echo  Next: Connect axg.kr domain in Vercel
-echo  1. Go to vercel.com/dashboard
-echo  2. Select 'get-whitepaper' project
-echo  3. Settings > Domains > Add 'axg.kr'
-echo  4. Update DNS records as shown
+echo  PUSH COMPLETE!
+echo  Check: https://github.com/jaechulkim1973/get-whitepaper
+echo.
+echo  Vercel deploy (if needed):
+echo    vercel login --github
+echo    vercel --prod
 echo ========================================
 pause
