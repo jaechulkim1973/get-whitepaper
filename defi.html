@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GET DeFi | Gold Ecosystem Token</title>
+<meta name="description" content="GET Token DeFi - Swap, Staking, Vault, Burn Tracker">
+<link rel="canonical" href="https://axg.kr/defi">
+<link rel="stylesheet" href="defi.css">
+</head>
+<body>
+<div class="app">
+
+<!-- SIDEBAR -->
+<aside class="sb">
+<div class="logo"><div class="logo-i">G</div><div class="logo-t">GET <span>DeFi</span></div></div>
+<div class="ng">
+<div class="nl">Main</div>
+<div class="ni ac" onclick="showPage('dashboard')"><span class="ic">📊</span> Dashboard</div>
+<div class="ni" onclick="showPage('swap')"><span class="ic">🔄</span> Swap</div>
+<div class="ni" onclick="showPage('staking')"><span class="ic">💰</span> Staking</div>
+<div class="ni" onclick="showPage('vault')"><span class="ic">🔐</span> Vault</div>
+<div class="ni" onclick="showPage('burn')"><span class="ic">🔥</span> Burn Tracker</div>
+</div>
+<div class="ng">
+<div class="nl">Info</div>
+<div class="ni" onclick="window.open('index.html')"><span class="ic">📄</span> Whitepaper</div>
+<div class="ni"><span class="ic">🌐</span> Governance</div>
+</div>
+<div class="sp"></div>
+<div class="nf"><b>GET Token v2.0</b>한국-홍콩 듀얼 허브<br>Gold Ecosystem Token</div>
+</aside>
+
+<!-- MAIN -->
+<div class="main">
+
+<!-- DASHBOARD -->
+<div class="page active" id="pg-dashboard">
+<div class="hd"><div><h1>Dashboard</h1><p>GET Token Ecosystem Overview</p></div>
+<div class="ha"><div class="wb"><span class="dot"></span>0x7a3f...c91d</div><button class="btn btn-p">Connect Wallet</button></div></div>
+
+<div class="g4">
+<div class="cd"><div class="cl">GET Price</div><div class="cv" style="color:var(--g)">$0.042</div><div class="cc up">▲ 12.4%</div></div>
+<div class="cd"><div class="cl">Market Cap</div><div class="cv">$420M</div><div class="cc up">▲ 8.2%</div></div>
+<div class="cd"><div class="cl">Total Staked</div><div class="cv" style="color:var(--b)">$187M</div><div class="cc up">▲ 3.1%</div></div>
+<div class="cd"><div class="cl">Total Burned</div><div class="cv" style="color:var(--r)">8.2%</div><div class="cc up">820M GET</div></div>
+</div>
+
+<div class="g2">
+<div class="cd">
+<div class="sec">📈 Gold Reserve Status <span class="badge">LIVE</span></div>
+<div class="g2" style="margin:0;gap:.6rem">
+<div><div class="cl">Korea Vault (인천 FTZ)</div><div style="font-family:'JetBrains Mono';font-size:1.1rem;font-weight:700;color:var(--g)">1,247 kg</div><div style="font-size:.72rem;color:var(--t2)">≈ $98.4M</div></div>
+<div><div class="cl">Hong Kong Vault (CGSE)</div><div style="font-family:'JetBrains Mono';font-size:1.1rem;font-weight:700;color:var(--g)">1,893 kg</div><div style="font-size:.72rem;color:var(--t2)">≈ $149.2M</div></div>
+</div>
+<div class="pb" style="margin-top:.8rem"><div class="pf" style="width:82%"></div></div>
+<div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--t3)"><span>Proof of Reserve: 82% backed</span><span>Last Audit: 2026-04-20</span></div>
+</div>
+<div class="cd">
+<div class="sec">🔥 Burn Progress</div>
+<div class="vr"><div class="vp">8.2%</div><div class="vs">of 50% target</div></div>
+<div style="display:flex;justify-content:space-around;text-align:center;font-size:.72rem;color:var(--t2)">
+<div><div style="font-weight:700;color:var(--r)">820M</div>Burned</div>
+<div><div style="font-weight:700;color:var(--g)">9.18B</div>Circulating</div>
+<div><div style="font-weight:700;color:var(--t1)">5B</div>Burn Limit</div>
+</div>
+</div>
+</div>
+
+<div class="cd">
+<div class="sec">📋 Recent Transactions</div>
+<div class="tw"><table>
+<thead><tr><th>Type</th><th>Amount</th><th>Price</th><th>Time</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td><span class="tg tg-g">Swap</span></td><td>50,000 GET → 2,100 USDC</td><td>$0.042</td><td>2 min ago</td><td style="color:var(--gr)">✓</td></tr>
+<tr><td><span class="tg tg-b">Stake</span></td><td>120,000 GET (T1)</td><td>$0.042</td><td>15 min ago</td><td style="color:var(--gr)">✓</td></tr>
+<tr><td><span class="tg tg-r">Burn</span></td><td>5,000,000 GET</td><td>—</td><td>1 hr ago</td><td style="color:var(--gr)">✓</td></tr>
+<tr><td><span class="tg tg-g">Swap</span></td><td>10,000 USDC → 238,095 GET</td><td>$0.042</td><td>2 hr ago</td><td style="color:var(--gr)">✓</td></tr>
+<tr><td><span class="tg tg-b">Stake</span></td><td>500,000 GET (T2)</td><td>$0.041</td><td>5 hr ago</td><td style="color:var(--gr)">✓</td></tr>
+</tbody></table></div>
+</div>
+</div>
+
+<!-- SWAP -->
+<div class="page" id="pg-swap">
+<div class="hd"><div><h1>Swap</h1><p>GET ↔ Stablecoin Exchange | Gold NAV 기반 실시간 교환</p></div>
+<div class="ha"><div class="wb"><span class="dot"></span>Connected</div></div></div>
+
+<div class="sw">
+<div class="cd" style="padding:1.5rem">
+<div class="tabs" style="margin-bottom:1rem"><button class="tab ac">Swap</button><button class="tab">Limit</button></div>
+
+<div class="sig">
+<div class="sit"><span>From</span><span>Balance: 1,250,000 GET</span></div>
+<div class="sir"><input class="si" placeholder="0.0" value="100000" id="fromAmt" oninput="calcSwap()">
+<div class="ts"><div class="ti" style="background:var(--gd);color:var(--g)">G</div>GET ▾</div></div>
+</div>
+
+<div class="sa"><div class="sab" onclick="flipSwap()">↕</div></div>
+
+<div class="sig">
+<div class="sit"><span>To</span><span>Balance: 12,400 USDC</span></div>
+<div class="sir"><input class="si" placeholder="0.0" value="4,200" id="toAmt" readonly>
+<div class="ts"><div class="ti" style="background:var(--bd);color:var(--b)">$</div>USDC ▾</div></div>
+</div>
+
+<div class="sinf">
+<div class="sinr"><span>Exchange Rate</span><span>1 GET = $0.042 USDC</span></div>
+<div class="sinr"><span>Gold NAV Backing</span><span>$0.0248 / GET</span></div>
+<div class="sinr"><span>Swap Fee</span><span>0.2% (200 GET)</span></div>
+<div class="sinr"><span>Price Impact</span><span style="color:var(--gr)">< 0.01%</span></div>
+<div class="sinr"><span>Route</span><span>GET → USDC (BitGo)</span></div>
+</div>
+
+<button class="sbtn" onclick="doSwap()">Swap 100,000 GET → 4,200 USDC</button>
+</div>
+
+<div class="cd" style="margin-top:1rem">
+<div class="sec">📊 GET/USDC Price Chart</div>
+<div style="height:180px;display:flex;align-items:flex-end;gap:3px;padding:.5rem 0">
+<div style="flex:1;height:40%;background:linear-gradient(180deg,var(--g),rgba(251,191,36,.1));border-radius:2px 2px 0 0"></div>
+<div style="flex:1;height:55%;background:linear-gradient(180deg,var(--g),rgba(251,191,36,.1));border-radius:2px 2px 0 0"></div>
+<div style="flex:1;height:45%;background:linear-gradient(180deg,var(--g),rgba(251,191,36,.1));border-radius:2px 2px 0 0"></div>
+<div style="flex:1;height:65%;background:linear-gradient(180deg,var(--g),rgba(251,191,36,.1));border-radius:2px 2px 0 0"></div>
+<div style="flex:1;height:60%;background:linear-gradient(180deg,var(--g),rgba(251,191,36,.1));border-radius:2px 2px 0 0"></div>
+<div style="flex:1;height:70%;background:linear-gradient(180deg,var(--g),rgba(251,191,36,.1));border-radius:2px 2px 0 0"></div>
+<div style="flex:1;height:68%;background:linear-gradient(180deg,var(--g),rgba(251,191,36,.1));border-radius:2px 2px 0 0"></div>
+<div style="flex:1;height:75%;background:linear-gradient(180deg,var(--g),rgba(251,191,36,.1));border-radius:2px 2px 0 0"></div>
+<div style="flex:1;height:72%;background:linear-gradient(180deg,var(--g),rgba(251,191,36,.1));border-radius:2px 2px 0 0"></div>
+<div style="flex:1;height:80%;background:linear-gradient(180deg,var(--g),rgba(251,191,36,.1));border-radius:2px 2px 0 0"></div>
+<div style="flex:1;height:78%;background:linear-gradient(180deg,var(--g),rgba(251,191,36,.1));border-radius:2px 2px 0 0"></div>
+<div style="flex:1;height:85%;background:linear-gradient(180deg,var(--gr),rgba(52,211,153,.1));border-radius:2px 2px 0 0"></div>
+</div>
+<div style="display:flex;justify-content:space-between;font-size:.6rem;color:var(--t3)"><span>Apr 1</span><span>Apr 7</span><span>Apr 14</span><span>Apr 21</span><span>Today</span></div>
+</div>
+</div>
+</div>
+
+<!-- STAKING -->
+<div class="page" id="pg-staking">
+<div class="hd"><div><h1>Staking</h1><p>3-Tier Staking | 금 거래 수익 기반 APY</p></div>
+<div class="ha"><button class="btn btn-o">My Positions</button><button class="btn btn-p">Claim All</button></div></div>
+
+<div class="g4" style="grid-template-columns:repeat(3,1fr)">
+<div class="cd bs"><div class="bv gold">$187M</div><div class="bl">Total Value Locked</div></div>
+<div class="cd bs"><div class="bv green">$2.4M</div><div class="bl">Total Rewards Paid</div></div>
+<div class="cd bs"><div class="bv" style="color:var(--b)">3,847</div><div class="bl">Active Stakers</div></div>
+</div>
+
+<div class="g3">
+<div class="cd st">
+<div class="sth"><div class="stn">🥇 T1 Gold Vault</div><div class="sta">8.0% APY</div></div>
+<div class="std">
+<div><div class="stdl">Lock-up</div><div class="stdv">90 Days</div></div>
+<div><div class="stdl">Pool Target</div><div class="stdv">$120M</div></div>
+<div><div class="stdl">Current Pool</div><div class="stdv" style="color:var(--g)">$98.4M</div></div>
+<div><div class="stdl">Fund Use</div><div class="stdv">금 매입</div></div>
+</div>
+<div class="pb"><div class="pf" style="width:82%"></div></div>
+<div style="font-size:.68rem;color:var(--t2);margin-bottom:.6rem;text-align:center">82% filled ($98.4M / $120M)</div>
+<button class="stb" onclick="alert('Stake T1: 90일 락업, APY 8%')">Stake GET → T1 Gold Vault</button>
+</div>
+
+<div class="cd st t2">
+<div class="sth"><div class="stn">💎 T2 Yield Plus</div><div class="sta">12.0% APY</div></div>
+<div class="std">
+<div><div class="stdl">Lock-up</div><div class="stdv">180 Days</div></div>
+<div><div class="stdl">Pool Target</div><div class="stdv">$50M</div></div>
+<div><div class="stdl">Current Pool</div><div class="stdv" style="color:var(--b)">$41.2M</div></div>
+<div><div class="stdl">Fund Use</div><div class="stdv">NPL·PF</div></div>
+</div>
+<div class="pb"><div class="pf" style="width:82%;background:linear-gradient(90deg,var(--b),var(--gr))"></div></div>
+<div style="font-size:.68rem;color:var(--t2);margin-bottom:.6rem;text-align:center">82% filled ($41.2M / $50M)</div>
+<button class="stb" onclick="alert('Stake T2: 180일 락업, APY 12%')">Stake GET → T2 Yield Plus</button>
+</div>
+
+<div class="cd st t3">
+<div class="sth"><div class="stn">🚀 T3 LP Staking</div><div class="sta">18.0% APY</div></div>
+<div class="std">
+<div><div class="stdl">Lock-up</div><div class="stdv">365 Days</div></div>
+<div><div class="stdl">Pool Target</div><div class="stdv">$30M</div></div>
+<div><div class="stdl">Current Pool</div><div class="stdv" style="color:var(--p)">$24.8M</div></div>
+<div><div class="stdl">Fund Use</div><div class="stdv">유동성</div></div>
+</div>
+<div class="pb"><div class="pf" style="width:83%;background:linear-gradient(90deg,var(--p),var(--gr))"></div></div>
+<div style="font-size:.68rem;color:var(--t2);margin-bottom:.6rem;text-align:center">83% filled ($24.8M / $30M)</div>
+<button class="stb" onclick="alert('Stake T3: 365일 락업, APY 18%')">Stake GET-USDC LP → T3</button>
+</div>
+</div>
+</div>
+
+<!-- VAULT -->
+<div class="page" id="pg-vault">
+<div class="hd"><div><h1>Gold Vault</h1><p>한국-홍콩 듀얼 Vault | 실시간 Proof of Reserve</p></div>
+<div class="ha"><span class="tg tg-gr" style="font-size:.75rem;padding:4px 10px">✓ Chainlink PoR Verified</span></div></div>
+
+<div class="g2">
+<div class="cd">
+<div class="sec">🇰🇷 한국 Vault — 인천 FTZ</div>
+<div class="vr"><div class="vp">1,247</div><div class="vs">kg Gold</div></div>
+<div class="g2" style="gap:.5rem;margin:0">
+<div class="cd" style="padding:.8rem;text-align:center"><div class="cl">USD Value</div><div style="font-family:'JetBrains Mono';font-weight:700;color:var(--g)">$98.4M</div></div>
+<div class="cd" style="padding:.8rem;text-align:center"><div class="cl">Purity</div><div style="font-family:'JetBrains Mono';font-weight:700">99.99%</div></div>
+<div class="cd" style="padding:.8rem;text-align:center"><div class="cl">Security</div><div style="font-weight:600;color:var(--gr);font-size:.8rem">Brink's</div></div>
+<div class="cd" style="padding:.8rem;text-align:center"><div class="cl">Last Audit</div><div style="font-weight:600;font-size:.8rem">Apr 20</div></div>
+</div>
+</div>
+<div class="cd">
+<div class="sec">🇭🇰 홍콩 Vault — CGSE Zone</div>
+<div class="vr"><div class="vp">1,893</div><div class="vs">kg Gold</div></div>
+<div class="g2" style="gap:.5rem;margin:0">
+<div class="cd" style="padding:.8rem;text-align:center"><div class="cl">USD Value</div><div style="font-family:'JetBrains Mono';font-weight:700;color:var(--g)">$149.2M</div></div>
+<div class="cd" style="padding:.8rem;text-align:center"><div class="cl">Purity</div><div style="font-family:'JetBrains Mono';font-weight:700">99.99%</div></div>
+<div class="cd" style="padding:.8rem;text-align:center"><div class="cl">Security</div><div style="font-weight:600;color:var(--gr);font-size:.8rem">Brink's</div></div>
+<div class="cd" style="padding:.8rem;text-align:center"><div class="cl">Last Audit</div><div style="font-weight:600;font-size:.8rem">Apr 18</div></div>
+</div>
+</div>
+</div>
+
+<div class="cd">
+<div class="sec">📋 Gold Token Issuance Log</div>
+<div class="tw"><table>
+<thead><tr><th>Date</th><th>Vault</th><th>Gold (kg)</th><th>Tokens Minted</th><th>TX Hash</th></tr></thead>
+<tbody>
+<tr><td>Apr 22</td><td><span class="tg tg-g">Korea</span></td><td>312 kg</td><td>312,000 GLD</td><td style="font-family:'JetBrains Mono';font-size:.7rem;color:var(--b)">0xfa3...9c1</td></tr>
+<tr><td>Apr 20</td><td><span class="tg tg-b">HK</span></td><td>520 kg</td><td>520,000 GLD</td><td style="font-family:'JetBrains Mono';font-size:.7rem;color:var(--b)">0x8b2...4e7</td></tr>
+<tr><td>Apr 18</td><td><span class="tg tg-g">Korea</span></td><td>285 kg</td><td>285,000 GLD</td><td style="font-family:'JetBrains Mono';font-size:.7rem;color:var(--b)">0xd71...2f3</td></tr>
+<tr><td>Apr 15</td><td><span class="tg tg-b">HK</span></td><td>448 kg</td><td>448,000 GLD</td><td style="font-family:'JetBrains Mono';font-size:.7rem;color:var(--b)">0x3c9...8a5</td></tr>
+</tbody></table></div>
+</div>
+</div>
+
+<!-- BURN -->
+<div class="page" id="pg-burn">
+<div class="hd"><div><h1>Burn Tracker</h1><p>GET 바이백 & 소각 | 순이익 30% 자동 소각</p></div>
+<div class="ha"><span class="tg tg-r" style="font-size:.75rem;padding:4px 10px">🔥 Next Burn: 3d 14h</span></div></div>
+
+<div class="g4">
+<div class="cd bs"><div class="bv fire">820M</div><div class="bl">Total Burned (GET)</div></div>
+<div class="cd bs"><div class="bv gold">8.2%</div><div class="bl">Burn Rate</div></div>
+<div class="cd bs"><div class="bv green">50%</div><div class="bl">Max Burn Cap</div></div>
+<div class="cd bs"><div class="bv" style="color:var(--b)">₩34.4B</div><div class="bl">Total Burn Value</div></div>
+</div>
+
+<div class="g2">
+<div class="cd">
+<div class="sec">📊 Monthly Burn Chart</div>
+<div class="bc">
+<div class="bb" style="height:25%"><div class="bbl">Nov</div></div>
+<div class="bb" style="height:32%"><div class="bbl">Dec</div></div>
+<div class="bb" style="height:40%"><div class="bbl">Jan</div></div>
+<div class="bb" style="height:48%"><div class="bbl">Feb</div></div>
+<div class="bb" style="height:55%"><div class="bbl">Mar</div></div>
+<div class="bb" style="height:70%"><div class="bbl">Apr</div></div>
+</div>
+</div>
+<div class="cd">
+<div class="sec">🎯 Burn Milestones</div>
+<div style="display:flex;flex-direction:column;gap:.6rem;margin-top:.5rem">
+<div><div class="pb"><div class="pf" style="width:82%;background:linear-gradient(90deg,var(--r),var(--g))"></div></div><div style="display:flex;justify-content:space-between;font-size:.7rem"><span style="color:var(--r)">Y1: 8.2% burned</span><span style="color:var(--t3)">Target 8%</span></div></div>
+<div><div class="pb"><div class="pf" style="width:0%"></div></div><div style="display:flex;justify-content:space-between;font-size:.7rem"><span style="color:var(--t3)">Y2: 0%</span><span style="color:var(--t3)">Target 22%</span></div></div>
+<div><div class="pb"><div class="pf" style="width:0%"></div></div><div style="display:flex;justify-content:space-between;font-size:.7rem"><span style="color:var(--t3)">Y3: 0%</span><span style="color:var(--t3)">Target 38%</span></div></div>
+<div><div class="pb"><div class="pf" style="width:0%"></div></div><div style="display:flex;justify-content:space-between;font-size:.7rem"><span style="color:var(--t3)">Y4: 0%</span><span style="color:var(--t3)">Target 47%</span></div></div>
+</div>
+</div>
+</div>
+
+<div class="cd">
+<div class="sec">🔥 Burn History</div>
+<div class="tw"><table>
+<thead><tr><th>Date</th><th>Amount Burned</th><th>Value</th><th>Source</th><th>TX</th></tr></thead>
+<tbody>
+<tr><td>Apr 22</td><td style="color:var(--r);font-weight:600">50M GET</td><td>$2.1M</td><td>Gold Spread</td><td style="font-family:'JetBrains Mono';font-size:.7rem;color:var(--b)">0xab1...3f2</td></tr>
+<tr><td>Apr 15</td><td style="color:var(--r);font-weight:600">45M GET</td><td>$1.89M</td><td>Swap Fee</td><td style="font-family:'JetBrains Mono';font-size:.7rem;color:var(--b)">0x7c3...e91</td></tr>
+<tr><td>Apr 8</td><td style="color:var(--r);font-weight:600">60M GET</td><td>$2.52M</td><td>Gold Spread</td><td style="font-family:'JetBrains Mono';font-size:.7rem;color:var(--b)">0xd42...7b8</td></tr>
+<tr><td>Apr 1</td><td style="color:var(--r);font-weight:600">40M GET</td><td>$1.68M</td><td>Staking Margin</td><td style="font-family:'JetBrains Mono';font-size:.7rem;color:var(--b)">0x2e9...5c4</td></tr>
+</tbody></table></div>
+</div>
+</div>
+
+</div><!-- /main -->
+</div><!-- /app -->
+
+<script>
+function showPage(name){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById('pg-'+name).classList.add('active');
+document.querySelectorAll('.ni').forEach(n=>n.classList.remove('ac'));
+event.currentTarget.classList.add('ac');
+}
+function calcSwap(){
+const v=parseFloat(document.getElementById('fromAmt').value.replace(/,/g,''))||0;
+document.getElementById('toAmt').value=(v*0.042).toLocaleString();
+}
+function flipSwap(){document.querySelector('.sab').style.transform='rotate(180deg)'}
+function doSwap(){
+const btn=event.currentTarget;btn.textContent='Processing...';btn.style.opacity='.6';
+setTimeout(()=>{btn.textContent='✓ Swap Complete!';btn.style.background='linear-gradient(135deg,#34d399,#10b981)';
+setTimeout(()=>{btn.textContent='Swap 100,000 GET → 4,200 USDC';btn.style.background='';btn.style.opacity='1'},2000)},1500);
+}
+</script>
+</body>
+</html>
