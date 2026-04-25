@@ -22,7 +22,7 @@ git status
 
 echo.
 echo [3/4] Committing...
-git commit -m "GET Token Whitepaper v2.0 - Korea-HK Dual Hub Update"
+git commit -m "DeFi v2.0 - Hotel Points, Smart Farm (SRP), GET Pay integration"
 
 echo.
 echo [4/4] Pushing to GitHub...

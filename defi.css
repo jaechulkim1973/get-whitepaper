@@ -154,4 +154,26 @@ tr:hover td{background:rgba(251,191,36,.02);color:var(--t1)}
 .pay-tx-amt{font-family:'JetBrains Mono';font-size:.82rem;font-weight:700}
 .pay-tx-amt.minus{color:var(--r)}.pay-tx-amt.plus{color:var(--gr)}
 
+/* SmartFarm */
+.farm-hero{border-radius:var(--rd2);overflow:hidden;background:linear-gradient(135deg,#064e3b 0%,#065f46 50%,#047857 100%);padding:2rem;margin-bottom:1.2rem;border:1px solid var(--br)}
+.farm-hero h2{font-size:1.5rem;font-weight:800;margin-bottom:.3rem}.farm-hero p{color:rgba(255,255,255,.7);font-size:.82rem}
+.farm-badge{display:inline-flex;align-items:center;gap:.3rem;background:rgba(52,211,153,.2);color:var(--gr);font-size:.65rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:.8rem}
+.farm-stat{display:flex;gap:1.5rem;margin-top:1rem;flex-wrap:wrap}
+.farm-stat div>div:first-child{font-size:.6rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.5px}
+.farm-stat div>div:last-child{font-weight:700;font-size:.88rem}
+.crop-card{background:var(--cd);border:1px solid var(--br);border-radius:var(--rd2);padding:1.1rem;transition:var(--tr)}
+.crop-card:hover{border-color:var(--gr)}
+.crop-icon{font-size:1.8rem;margin-bottom:.4rem}.crop-name{font-size:.9rem;font-weight:700;margin-bottom:.2rem}
+.crop-yield{font-size:.68rem;color:var(--t3)}.crop-price{font-family:'JetBrains Mono';font-size:1rem;font-weight:800;color:var(--gr);margin-top:.4rem}
+.srp-box{background:linear-gradient(135deg,#064e3b,#059669);border-radius:var(--rd2);padding:1.5rem;color:white;margin-bottom:1.2rem;position:relative;overflow:hidden}
+.srp-box::after{content:'SRP';position:absolute;right:-8px;top:-8px;font-size:4rem;font-weight:900;opacity:.06}
+.srp-label{font-size:.7rem;opacity:.6;text-transform:uppercase;letter-spacing:1px}
+.srp-value{font-family:'JetBrains Mono';font-size:1.8rem;font-weight:900;margin:.2rem 0}
+.srp-sub{font-size:.72rem;opacity:.55}
+.voucher-item{display:flex;align-items:center;gap:.8rem;padding:.7rem .9rem;border-radius:9px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);transition:var(--tr);cursor:pointer}
+.voucher-item:hover{background:rgba(52,211,153,.05);border-color:rgba(52,211,153,.2)}
+.voucher-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;background:rgba(52,211,153,.1)}
+.voucher-info{flex:1}.voucher-name{font-size:.8rem;font-weight:600}.voucher-desc{font-size:.62rem;color:var(--t3)}
+.voucher-price{font-family:'JetBrains Mono';font-size:.8rem;font-weight:700;color:var(--gr)}
+
 @media(max-width:900px){.app{grid-template-columns:1fr}.sb{display:none}.main{padding:1rem}.g4{grid-template-columns:1fr 1fr}.g2,.g3{grid-template-columns:1fr}.pay-actions{grid-template-columns:repeat(2,1fr)}}
