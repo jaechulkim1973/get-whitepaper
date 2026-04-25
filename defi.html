@@ -23,6 +23,11 @@
 <div class="ni" onclick="showPage('burn')"><span class="ic">🔥</span> Burn Tracker</div>
 </div>
 <div class="ng">
+<div class="nl">Services</div>
+<div class="ni" onclick="showPage('hotel')"><span class="ic">🏨</span> Hotel Points</div>
+<div class="ni" onclick="showPage('pay')"><span class="ic">💳</span> GET Pay</div>
+</div>
+<div class="ng">
 <div class="nl">Info</div>
 <div class="ni" onclick="window.open('index.html')"><span class="ic">📄</span> Whitepaper</div>
 <div class="ni"><span class="ic">🌐</span> Governance</div>
@@ -278,10 +283,153 @@
 </div>
 </div>
 
+<!-- HOTEL POINTS -->
+<div class="page" id="pg-hotel">
+<div class="hd"><div><h1>Hotel Points</h1><p>체스터톤스 속초 호텔 | 포인트 구매 & GET Swap</p></div>
+<div class="ha"><span class="tg tg-gr" style="font-size:.75rem;padding:4px 10px">✓ Partnership Active</span></div></div>
+
+<div class="hotel-hero">
+<div class="hotel-badge"><span class="dot"></span> LIVE — 실시간 포인트 판매</div>
+<h2>🏨 체스터톤스 속초 호텔</h2>
+<p>강원도 속초시 엑스포로 109 | ⭐ 4성급 프리미엄 리조트 호텔</p>
+<div style="display:flex;gap:1.5rem;margin-top:1rem;flex-wrap:wrap">
+<div><div style="font-size:.65rem;color:rgba(255,255,255,.5)">온천 수영장</div><div style="font-weight:700;font-size:.9rem">🏊 야외 온천</div></div>
+<div><div style="font-size:.65rem;color:rgba(255,255,255,.5)">사우나</div><div style="font-weight:700;font-size:.9rem">♨️ 치유인</div></div>
+<div><div style="font-size:.65rem;color:rgba(255,255,255,.5)">피트니스</div><div style="font-weight:700;font-size:.9rem">💪 24h Gym</div></div>
+<div><div style="font-size:.65rem;color:rgba(255,255,255,.5)">워케이션</div><div style="font-weight:700;font-size:.9rem">💻 노마드</div></div>
+<div><div style="font-size:.65rem;color:rgba(255,255,255,.5)">주차</div><div style="font-weight:700;font-size:.9rem">🅿️ 무료</div></div>
+</div>
+</div>
+
+<div class="sec">🛏️ 객실 선택 & 포인트 구매</div>
+<div class="g3" style="margin-bottom:1.2rem">
+<div class="room-card selected" onclick="selectRoom(this,0)">
+<div class="room-name">Standard</div>
+<div class="room-type">원룸형 · 2인 기준</div>
+<div class="room-price">120,000<small>P / 1박</small></div>
+<div class="room-features"><span class="room-feat">TV</span><span class="room-feat">냉장고</span><span class="room-feat">Wi-Fi</span><span class="room-feat">에어컨</span></div>
+</div>
+<div class="room-card" onclick="selectRoom(this,1)">
+<div class="room-name">Superior</div>
+<div class="room-type">투룸형 · 4인 기준</div>
+<div class="room-price">180,000<small>P / 1박</small></div>
+<div class="room-features"><span class="room-feat">투룸</span><span class="room-feat">세탁기</span><span class="room-feat">Wi-Fi</span><span class="room-feat">온천</span></div>
+</div>
+<div class="room-card" onclick="selectRoom(this,2)">
+<div class="room-name">Deluxe</div>
+<div class="room-type">투룸형 · 6인 기준</div>
+<div class="room-price">280,000<small>P / 1박</small></div>
+<div class="room-features"><span class="room-feat">오션뷰</span><span class="room-feat">투룸</span><span class="room-feat">세탁기</span><span class="room-feat">사우나</span></div>
+</div>
+</div>
+<div class="g2" style="margin-bottom:1.2rem">
+<div class="room-card" onclick="selectRoom(this,3)">
+<div class="room-name">🏅 Suite</div>
+<div class="room-type">3룸 · 8인 기준 · VIP</div>
+<div class="room-price">450,000<small>P / 1박</small></div>
+<div class="room-features"><span class="room-feat">3룸</span><span class="room-feat">오션뷰</span><span class="room-feat">미니골프</span><span class="room-feat">AV룸</span><span class="room-feat">프리미엄</span></div>
+</div>
+<div class="room-card" onclick="selectRoom(this,4)">
+<div class="room-name">👑 Penthouse</div>
+<div class="room-type">최상층 · 10인 기준 · VVIP</div>
+<div class="room-price">750,000<small>P / 1박</small></div>
+<div class="room-features"><span class="room-feat">최상층</span><span class="room-feat">파노라마뷰</span><span class="room-feat">전용 테라스</span><span class="room-feat">올 인클루시브</span></div>
+</div>
+</div>
+
+<div class="g2">
+<div class="pts-calc">
+<div class="sec">🧮 포인트 계산기</div>
+<div class="pts-row"><span class="pts-l">객실</span><span class="pts-v" id="calc-room">Standard</span></div>
+<div class="pts-row"><span class="pts-l">박 수</span>
+<div style="display:flex;align-items:center;gap:.5rem">
+<button class="btn btn-o" style="padding:2px 10px;font-size:.9rem" onclick="changeNights(-1)">−</button>
+<span class="pts-v" id="calc-nights">2</span>
+<button class="btn btn-o" style="padding:2px 10px;font-size:.9rem" onclick="changeNights(1)">+</button>
+</div></div>
+<div class="pts-row"><span class="pts-l">포인트 단가</span><span class="pts-v" id="calc-ppn">120,000 P</span></div>
+<div class="pts-row"><span class="pts-l">총 포인트</span><span class="pts-v pts-total" id="calc-total">240,000 P</span></div>
+<div class="pts-row"><span class="pts-l">GET 환산</span><span class="pts-v pts-get" id="calc-get">≈ 5,714,286 GET</span></div>
+<div style="margin-top:.8rem;display:flex;gap:.5rem">
+<button class="sbtn" style="flex:1" onclick="buyPoints()">KRW로 포인트 구매</button>
+<button class="stb" style="flex:1" onclick="buyWithGET()">GET으로 구매</button>
+</div>
+</div>
+<div class="cd">
+<div class="sec">🔄 포인트 ↔ GET Swap</div>
+<div class="sig" style="margin-bottom:.6rem">
+<div class="sit"><span>Hotel Points</span><span>Balance: 540,000 P</span></div>
+<div class="sir"><input class="si" placeholder="0" value="120000" id="pts-from" oninput="calcPtsSwap()"><div class="ts"><div class="ti" style="background:linear-gradient(135deg,#1a1a2e,#0f3460);color:white;font-size:.5rem">HP</div>Points</div></div>
+</div>
+<div class="sa"><div class="sab" onclick="flipPtsSwap()">↕</div></div>
+<div class="sig">
+<div class="sit"><span>GET Coin</span><span>Balance: 1,250,000 GET</span></div>
+<div class="sir"><input class="si" placeholder="0" value="2,857,143" id="pts-to" readonly><div class="ts"><div class="ti" style="background:var(--gd);color:var(--g)">G</div>GET</div></div>
+</div>
+<div class="sinf">
+<div class="sinr"><span>Exchange Rate</span><span>1 P = 23.81 GET</span></div>
+<div class="sinr"><span>Swap Fee</span><span style="color:var(--gr)">0.15%</span></div>
+</div>
+<button class="sbtn" onclick="doPtsSwap()">Swap 120,000 P → GET</button>
+</div>
+</div>
+</div>
+
+<!-- PAY -->
+<div class="page" id="pg-pay">
+<div class="hd"><div><h1>GET Pay</h1><p>블록체인 기반 통합 결제 & 바우처 플랫폼</p></div>
+<div class="ha"><div class="wb"><span class="dot"></span>Connected</div></div></div>
+
+<div class="pay-balance">
+<div class="pay-bl">Total Balance</div>
+<div class="pay-bv">1,250,000 GET</div>
+<div class="pay-bs">≈ $52,500 USD · ₩70,350,000 KRW</div>
+</div>
+
+<div class="pay-actions">
+<div class="pay-act" onclick="alert('QR 결제 스캐너 실행')"><div class="pay-ai">📱</div><div class="pay-at">QR 결제</div></div>
+<div class="pay-act" onclick="alert('충전 페이지로 이동')"><div class="pay-ai">💰</div><div class="pay-at">충전</div></div>
+<div class="pay-act" onclick="alert('송금 기능 실행')"><div class="pay-ai">📤</div><div class="pay-at">송금</div></div>
+<div class="pay-act" onclick="alert('바우처 마켓 오픈')"><div class="pay-ai">🎫</div><div class="pay-at">바우처</div></div>
+</div>
+
+<div class="g2">
+<div class="cd">
+<div class="sec">🏪 제휴 가맹점</div>
+<div style="display:flex;flex-direction:column;gap:.5rem">
+<div class="merchant-card"><div class="merchant-icon" style="background:linear-gradient(135deg,#1a1a2e,#0f3460)">🏨</div><div class="merchant-info"><div class="merchant-name">체스터톤스 속초</div><div class="merchant-cat">호텔 · 숙박</div></div><div class="merchant-disc">GET 5% 할인</div></div>
+<div class="merchant-card"><div class="merchant-icon" style="background:linear-gradient(135deg,#064e3b,#059669)">🌿</div><div class="merchant-info"><div class="merchant-name">세종 스마트 리버팜</div><div class="merchant-cat">스마트팜 · 농산물</div></div><div class="merchant-disc">GET 8% 할인</div></div>
+<div class="merchant-card"><div class="merchant-icon" style="background:linear-gradient(135deg,#7c2d12,#ea580c)">☕</div><div class="merchant-info"><div class="merchant-name">속초 아틀리에 카페</div><div class="merchant-cat">카페 · F&B</div></div><div class="merchant-disc">GET 3% 할인</div></div>
+<div class="merchant-card"><div class="merchant-icon" style="background:linear-gradient(135deg,#581c87,#a855f7)">💊</div><div class="merchant-info"><div class="merchant-name">HST 헬스케어</div><div class="merchant-cat">건강 · 웰니스</div></div><div class="merchant-disc">GET 10% 할인</div></div>
+<div class="merchant-card"><div class="merchant-icon" style="background:linear-gradient(135deg,#1e3a5f,#3b82f6)">⛷️</div><div class="merchant-info"><div class="merchant-name">속초 관광 패스</div><div class="merchant-cat">관광 · 레저</div></div><div class="merchant-disc">GET 7% 할인</div></div>
+</div>
+</div>
+<div>
+<div class="cd" style="margin-bottom:1.2rem">
+<div class="sec">📱 QR 결제</div>
+<div class="qr-area"><span>📷</span></div>
+<p style="text-align:center;font-size:.72rem;color:var(--t2)">가맹점 QR을 스캔하여 GET으로 결제</p>
+<button class="sbtn" style="margin-top:.8rem" onclick="alert('카메라 스캔 실행')">QR 스캔 결제하기</button>
+</div>
+<div class="cd">
+<div class="sec">📋 최근 결제 내역</div>
+<div class="pay-history">
+<div class="pay-tx"><div class="pay-tx-icon" style="background:var(--gd)">🏨</div><div class="pay-tx-info"><div class="pay-tx-name">체스터톤스 속초</div><div class="pay-tx-date">Apr 25, 14:32</div></div><div class="pay-tx-amt minus">-120,000 P</div></div>
+<div class="pay-tx"><div class="pay-tx-icon" style="background:var(--grd)">💰</div><div class="pay-tx-info"><div class="pay-tx-name">GET 충전</div><div class="pay-tx-date">Apr 24, 09:15</div></div><div class="pay-tx-amt plus">+500,000 GET</div></div>
+<div class="pay-tx"><div class="pay-tx-icon" style="background:var(--bd)">🌿</div><div class="pay-tx-info"><div class="pay-tx-name">세종 리버팜 채소박스</div><div class="pay-tx-date">Apr 23, 16:40</div></div><div class="pay-tx-amt minus">-45,000 P</div></div>
+<div class="pay-tx"><div class="pay-tx-icon" style="background:var(--rd)">🔥</div><div class="pay-tx-info"><div class="pay-tx-name">캐시백 적립</div><div class="pay-tx-date">Apr 22, 11:20</div></div><div class="pay-tx-amt plus">+6,000 GET</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 </div><!-- /main -->
 </div><!-- /app -->
 
 <script>
+const roomData=[{name:'Standard',price:120000},{name:'Superior',price:180000},{name:'Deluxe',price:280000},{name:'Suite',price:450000},{name:'Penthouse',price:750000}];
+let selRoom=0,nights=2;
 function showPage(name){
 document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
 document.getElementById('pg-'+name).classList.add('active');
@@ -297,6 +445,37 @@ function doSwap(){
 const btn=event.currentTarget;btn.textContent='Processing...';btn.style.opacity='.6';
 setTimeout(()=>{btn.textContent='✓ Swap Complete!';btn.style.background='linear-gradient(135deg,#34d399,#10b981)';
 setTimeout(()=>{btn.textContent='Swap 100,000 GET → 4,200 USDC';btn.style.background='';btn.style.opacity='1'},2000)},1500);
+}
+function selectRoom(el,idx){
+document.querySelectorAll('.room-card').forEach(c=>c.classList.remove('selected'));
+el.classList.add('selected');selRoom=idx;updateCalc();
+}
+function changeNights(d){nights=Math.max(1,Math.min(30,nights+d));updateCalc()}
+function updateCalc(){
+const r=roomData[selRoom],total=r.price*nights,getAmt=Math.round(total/0.042);
+document.getElementById('calc-room').textContent=r.name;
+document.getElementById('calc-nights').textContent=nights;
+document.getElementById('calc-ppn').textContent=r.price.toLocaleString()+' P';
+document.getElementById('calc-total').textContent=total.toLocaleString()+' P';
+document.getElementById('calc-get').textContent='≈ '+getAmt.toLocaleString()+' GET';
+}
+function calcPtsSwap(){
+const v=parseFloat(document.getElementById('pts-from').value.replace(/,/g,''))||0;
+document.getElementById('pts-to').value=Math.round(v*23.81).toLocaleString();
+}
+function flipPtsSwap(){}
+function doPtsSwap(){
+const btn=event.currentTarget;btn.textContent='Processing...';btn.style.opacity='.6';
+setTimeout(()=>{btn.textContent='✓ Swap Complete!';btn.style.background='linear-gradient(135deg,#34d399,#10b981)';
+setTimeout(()=>{btn.textContent='Swap 120,000 P → GET';btn.style.background='';btn.style.opacity='1'},2000)},1500);
+}
+function buyPoints(){
+const total=roomData[selRoom].price*nights;
+alert('KRW ₩'+total.toLocaleString()+' 결제로 '+total.toLocaleString()+' 포인트를 구매합니다.');
+}
+function buyWithGET(){
+const total=roomData[selRoom].price*nights,getAmt=Math.round(total/0.042);
+alert(getAmt.toLocaleString()+' GET으로 '+total.toLocaleString()+' 포인트를 구매합니다.');
 }
 </script>
 </body>

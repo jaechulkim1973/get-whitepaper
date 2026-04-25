@@ -1,5 +1,6 @@
 {
   "rewrites": [
+    { "source": "/defi", "destination": "/defi.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [

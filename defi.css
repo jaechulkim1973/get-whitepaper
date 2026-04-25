@@ -111,4 +111,47 @@ tr:hover td{background:rgba(251,191,36,.02);color:var(--t1)}
 /* Pages */
 .page{display:none}.page.active{display:block}
 
-@media(max-width:900px){.app{grid-template-columns:1fr}.sb{display:none}.main{padding:1rem}.g4{grid-template-columns:1fr 1fr}.g2,.g3{grid-template-columns:1fr}}
+/* Hotel */
+.hotel-hero{position:relative;border-radius:var(--rd2);overflow:hidden;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);padding:2rem;margin-bottom:1.2rem;border:1px solid var(--br)}
+.hotel-hero h2{font-size:1.5rem;font-weight:800;margin-bottom:.3rem}.hotel-hero p{color:var(--t2);font-size:.82rem}
+.hotel-hero .hotel-badge{display:inline-flex;align-items:center;gap:.3rem;background:rgba(251,191,36,.15);color:var(--g);font-size:.65rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:.8rem}
+.room-card{background:var(--cd);border:1px solid var(--br);border-radius:var(--rd2);padding:1.2rem;cursor:pointer;transition:var(--tr);position:relative;overflow:hidden}
+.room-card:hover,.room-card.selected{border-color:var(--g);box-shadow:0 0 20px rgba(251,191,36,.1)}
+.room-card.selected::after{content:'✓';position:absolute;top:8px;right:10px;background:var(--g);color:#07070d;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800}
+.room-name{font-size:.95rem;font-weight:700;margin-bottom:.3rem}.room-type{font-size:.68rem;color:var(--t3);margin-bottom:.6rem}
+.room-price{font-family:'JetBrains Mono';font-size:1.1rem;font-weight:800;color:var(--g)}
+.room-price small{font-size:.65rem;color:var(--t3);font-weight:400;margin-left:.2rem}
+.room-features{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.5rem}
+.room-feat{font-size:.6rem;padding:2px 6px;border-radius:4px;background:rgba(255,255,255,.04);color:var(--t2);border:1px solid rgba(255,255,255,.04)}
+.pts-calc{background:var(--cd);border:1px solid var(--br);border-radius:var(--rd2);padding:1.5rem}
+.pts-row{display:flex;justify-content:space-between;align-items:center;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.03);font-size:.82rem}
+.pts-row:last-child{border:0}.pts-row .pts-l{color:var(--t2)}.pts-row .pts-v{font-weight:600;font-family:'JetBrains Mono'}
+.pts-total{font-size:1.3rem;color:var(--g);font-weight:800}
+.pts-get{color:var(--gr);font-size:.85rem}
+
+/* Pay */
+.pay-balance{background:linear-gradient(135deg,#fbbf24 0%,#d97706 50%,#b45309 100%);border-radius:var(--rd2);padding:2rem;color:#07070d;margin-bottom:1.2rem;position:relative;overflow:hidden}
+.pay-balance::after{content:'GET';position:absolute;right:-10px;top:-10px;font-size:5rem;font-weight:900;opacity:.08}
+.pay-balance .pay-bl{font-size:.72rem;font-weight:600;opacity:.7;text-transform:uppercase;letter-spacing:1px}
+.pay-balance .pay-bv{font-family:'JetBrains Mono';font-size:2rem;font-weight:900;margin:.3rem 0}
+.pay-balance .pay-bs{font-size:.75rem;opacity:.65}
+.pay-actions{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-bottom:1.2rem}
+.pay-act{background:var(--cd);border:1px solid var(--br);border-radius:var(--rd2);padding:1rem .5rem;text-align:center;cursor:pointer;transition:var(--tr)}
+.pay-act:hover{border-color:var(--g);transform:translateY(-2px)}
+.pay-act .pay-ai{font-size:1.5rem;margin-bottom:.3rem}.pay-act .pay-at{font-size:.72rem;font-weight:600;color:var(--t2)}
+.merchant-card{background:var(--cd);border:1px solid var(--br);border-radius:var(--rd2);padding:1rem;display:flex;align-items:center;gap:.8rem;transition:var(--tr);cursor:pointer}
+.merchant-card:hover{border-color:var(--g)}.merchant-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.merchant-info{flex:1}.merchant-name{font-size:.85rem;font-weight:600}.merchant-cat{font-size:.65rem;color:var(--t3)}
+.merchant-disc{font-family:'JetBrains Mono';font-size:.8rem;font-weight:700;color:var(--gr)}
+.qr-area{width:160px;height:160px;background:white;border-radius:12px;margin:1rem auto;display:flex;align-items:center;justify-content:center;position:relative}
+.qr-area::before{content:'';position:absolute;inset:8px;border:2px dashed #ddd;border-radius:8px}
+.qr-area span{font-size:2.5rem}
+.pay-history{display:flex;flex-direction:column;gap:.4rem}
+.pay-tx{display:flex;align-items:center;gap:.8rem;padding:.6rem .8rem;border-radius:9px;background:rgba(255,255,255,.02);transition:var(--tr)}
+.pay-tx:hover{background:rgba(251,191,36,.04)}
+.pay-tx-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+.pay-tx-info{flex:1}.pay-tx-name{font-size:.8rem;font-weight:600}.pay-tx-date{font-size:.62rem;color:var(--t3)}
+.pay-tx-amt{font-family:'JetBrains Mono';font-size:.82rem;font-weight:700}
+.pay-tx-amt.minus{color:var(--r)}.pay-tx-amt.plus{color:var(--gr)}
+
+@media(max-width:900px){.app{grid-template-columns:1fr}.sb{display:none}.main{padding:1rem}.g4{grid-template-columns:1fr 1fr}.g2,.g3{grid-template-columns:1fr}.pay-actions{grid-template-columns:repeat(2,1fr)}}
